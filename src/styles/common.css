@@ -8,6 +8,31 @@ body {
   font-family: sans-serif;
 }
 
+a {
+    margin: 5px;
+  }
+
+.landing-main{
+    height:100%;
+    width:100%;
+    margin:0;
+    background: -webkit-linear-gradient(45deg, #67B1C3 10%, #084A6B);
+    background: linear-gradient(45deg, #67B1C3 10%, #084A6B );
+
+}
+
+.landing-main-container{
+    height:100%;
+    min-width:100%;
+    padding: 0;
+    position:absolute;
+}
+
+.landing-main-tagline{
+    font-family:"Helvetica Neue", Helvetica, Arial, Verdana, "Trebuchet MS";
+    font-size: 3em;
+}
+
 .navbar .login-button {
   text-align: right;
   padding-right: 0;
