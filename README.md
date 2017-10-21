@@ -5,4 +5,4 @@ Material UI
 http://www.material-ui.com/#/
 
 Material Design CSS Framework
-https://github.com/muicss/mui
+https://www.muicss.com/
