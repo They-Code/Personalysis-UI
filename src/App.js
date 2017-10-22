@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles/common.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
 import { 
@@ -10,13 +11,15 @@ import {
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Route exact path='/' component={Home} />
-          <Route path='/about' render={() => <h1>About</h1>} />
-          <Route path='/login' component={Login} />
-        </div>
-      </Router>
+      <MuiThemeProvider>
+        <Router>
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' render={() => <h1>About</h1>} />
+            <Route path='/login' component={Login} />
+          </div>
+        </Router>
+      </MuiThemeProvider>
     );
   }
 }
