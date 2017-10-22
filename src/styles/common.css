@@ -35,3 +35,10 @@ a {
 .landing-main-container .signup-button{
     border-style: solid;
 }
+
+.landing-main-container .floating-button{
+    position:fixed;
+    bottom: 5%;
+    right:3%;
+
+}
