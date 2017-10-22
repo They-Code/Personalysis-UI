@@ -70,6 +70,7 @@ class Nav extends Component {
             }}
             onTitleTouchTap={this.onTitleClick}
             title="Personalystic"
+
             iconStyleRight={{
               marginLeft: 'auto',
               marginRight: 'auto',
