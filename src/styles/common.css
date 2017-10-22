@@ -8,7 +8,14 @@ a {
     margin: 5px;
   }
 
-.landing-main{
+.landing-main-container{
+    height:100%;
+    min-width:100%;
+    padding:0;
+    position:absolute;
+}
+
+.landing-main-container .top-row{
     height:100%;
     width:100%;
     margin:0;
@@ -17,14 +24,14 @@ a {
 
 }
 
-.landing-main-container{
-    height:100%;
-    min-width:100%;
-    padding: 0;
-    position:absolute;
-}
-
-.landing-main-tagline{
+.landing-main-container .tagline{
     font-family:"Helvetica Neue", Helvetica, Arial, Verdana, "Trebuchet MS";
     font-size: 3em;
+    font-weight:bold;
+    text-align: left;
+    line-height: 110%;
+}
+
+.landing-main-container .signup-button{
+    border-style: solid;
 }

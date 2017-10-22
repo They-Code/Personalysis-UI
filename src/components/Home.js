@@ -3,29 +3,35 @@ import '../styles/common.css';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 class Home extends Component {
     constructor() {
         super();
         this.state = {};
     }
-    
+
     render() {
         return (
             <Container className="landing-main-container">
-                <Row className="landing-main">
-
-                    <Col md="12">md-12
+                <Row className="top-row">
+                    <Col md="1">md-1 </Col>
+                    <Col md="4">md-4
                         <br/>
                         <br/>
-                        <h1 className="landing-main-tagline">
+                        <br/>
+                        <br/>
+                        <h1 className="tagline">
                             Who You Are
                             <br/>
                             Is In Your
                             <br/>
                             DNA
                         </h1>
+                        <RaisedButton label="Sign Up For Free" className="signup-button"/>
                     </Col>
+                    <Col md="7">md-7</Col>
                 </Row>
                  <Row>
                     <Col md="12">
@@ -42,6 +48,7 @@ class Home extends Component {
             </Container>
         );
     }
+
 }
 
 export default Home;
