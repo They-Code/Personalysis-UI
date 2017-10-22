@@ -3,6 +3,7 @@ import '../styles/common.css';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
+import Nav from './Nav.js';
 
 class Home extends Component {
     constructor() {

@@ -52,7 +52,7 @@ class Nav extends Component {
   onSignUpButtonClick() {
     console.log('signup clicked');
   }
-  
+
   render() {
     return (
       <Container className="navbar" fluid={true}>
