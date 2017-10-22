@@ -5,6 +5,7 @@ import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Nav from './Nav.js';
 import RaisedButton from 'material-ui/RaisedButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 class Home extends Component {
     constructor() {
@@ -16,8 +17,9 @@ class Home extends Component {
         return (
             <Container className="landing-main-container">
                 <Row className="top-row">
-                    <Col md="1">md-1 </Col>
-                    <Col md="4">md-4
+                    <Col md="1">
+                    </Col>
+                    <Col md="4">
                         <br/>
                         <br/>
                         <br/>
@@ -31,19 +33,22 @@ class Home extends Component {
                         </h1>
                         <RaisedButton label="Sign Up For Free" className="signup-button"/>
                     </Col>
-                    <Col md="7">md-7</Col>
+                    <Col md="7">
+                        <FloatingActionButton className="floating-button" backgroundColor="white"/>
+                    </Col>
                 </Row>
                  <Row>
                     <Col md="12">
-                        Row2-md-12
                         <br/>
                     </Col>
                  </Row>
                  <Row>
-                    <Col md="12">Row3-md-12</Col>
+                    <Col md="12">
+                    </Col>
                 </Row>
                 <Row>
-                    <Col md="12">Row4-md-12</Col>
+                    <Col md="12">
+                    </Col>
                 </Row>
             </Container>
         );

@@ -41,6 +41,12 @@ a {
 }
 
 
+.landing-main-container .floating-button{
+    position:fixed;
+    bottom: 5%;
+    right:3%;
+
+}
 .navbar .login-button {
   text-align: right;
   padding-right: 0;
