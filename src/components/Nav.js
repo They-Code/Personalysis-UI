@@ -59,14 +59,12 @@ class Nav extends Component {
         <Row>
           <Col md="12">
           <AppBar
-            style={{
-              backgroundColor: 'white',
-              position: 'fixed',
-            }}
+            title="Personalystic"
+            style={{position: 'fixed', backgroundColor:'white'}}
             titleStyle={{
               flex: 'none',
               marginRight: '0.5em',
-              color: '#67B1C3'
+                color: '#67B1C3'
             }}
             onTitleTouchTap={this.onTitleClick}
             title="Personalystic"
