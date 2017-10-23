@@ -17,7 +17,7 @@ class Nav extends Component {
     super(props);
     this.state = {};
 
-    this.onTitleTouchTapHandler = this.onTitleTouchTapHandler.bind(this);
+    this.onTitleClick = this.onTitleClick.bind(this);
     this.onFeaturesButtonClick = this.onFeaturesButtonClick.bind(this);
     this.onContactButtonClick = this.onContactButtonClick.bind(this);
     this.onAboutUsButtonClick = this.onAboutUsButtonClick.bind(this);
@@ -26,7 +26,7 @@ class Nav extends Component {
     this.onSignUpButtonClick = this.onSignUpButtonClick.bind(this);
   }
 
-  onTitleTouchTapHandler() {
+  onTitleClick() {
     console.log('title clicked');
   }
 
@@ -68,7 +68,7 @@ class Nav extends Component {
               marginRight: '0.5em',
               color: '#67B1C3'
             }}
-            onTitleTouchTap={this.onTitleTouchTapHandler}
+            onTitleTouchTap={this.onTitleClick}
             title="Personalystic"
             iconStyleRight={{
               marginLeft: 'auto',
