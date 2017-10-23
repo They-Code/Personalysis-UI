@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/common.css';
+import Nav from './Nav.js';
 
 class Home extends Component {
     constructor() {
@@ -9,7 +10,7 @@ class Home extends Component {
     
     render() {
         return (
-            <h1>Home</h1>
+            <Nav />
         );
     }
 }
