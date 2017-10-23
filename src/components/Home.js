@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import '../styles/common.css';
-import Container from 'muicss/lib/react/container';
-import Row from 'muicss/lib/react/row';
-import Col from 'muicss/lib/react/col';
-import RaisedButton from 'material-ui/RaisedButton';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import Nav from './Nav.js';
 
+import {
+    Container,
+    Row,
+    Col,
+} from 'muicss/react';
+
+import {
+    FloatingActionButton,
+    RaisedButton,
+  } from 'material-ui';
 
 class Home extends Component {
     constructor() {
@@ -15,6 +21,8 @@ class Home extends Component {
 
     render() {
         return (
+            <div>
+            <Nav />
             <Container className="landing-main-container">
                 <Row className="top-row">
                     <Col md="1">
@@ -51,6 +59,7 @@ class Home extends Component {
                     </Col>
                 </Row>
             </Container>
+            </div>
         );
     }
 
