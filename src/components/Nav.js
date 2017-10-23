@@ -20,15 +20,20 @@ class Nav extends Component {
           <Col md="12">
 
           <AppBar
+            style={{
+              backgroundColor: 'white',
+            }}
             title="Personalystic"
             titleStyle={{
               flex: 'none',
               marginRight: '0.5em',
+              color: '#67B1C3'
             }}
             iconStyleRight={{
               marginLeft: 'auto',
               marginRight: 'auto',
               width: '100%',
+              lineHeight: '52px',
             }}
             iconElementRight={
               <Container fluid={true}>
@@ -48,7 +53,7 @@ class Nav extends Component {
                   <Col md="4" className="login-button">
                     <FlatButton>LOGIN</FlatButton>
                   </Col>
-                  <Col md="1">
+                  <Col md="1" className="signup-button">
                     <FlatButton>SIGN UP</FlatButton>
                   </Col>
                 </Row>

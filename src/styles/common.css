@@ -8,8 +8,13 @@ body {
   font-family: sans-serif;
 }
 
-.login-button {
+.navbar .login-button {
   text-align: right;
+  padding-right: 0;
+}
+
+.navbar .signup-button {
+  padding-left: 0;
 }
 
 .navbar {
