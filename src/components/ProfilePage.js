@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/common.css';
+import '../styles/profilePage.css';
 
 import ProfileInfo from './ProfileInfo.js';
 import StatisticalOverview from './StatisticalOverview.js';
+
+import Nav from './Nav.js';
 
 import {
     Container,
@@ -17,14 +19,21 @@ class ProfilePage extends Component {
     
     render() {
         return (
-            <Container className="profile-page">
-                <Row>
-                    <ProfileInfo />
-                </Row>
-                <Row>
-                    <StatisticalOverview />
-                </Row>
-            </Container>
+            <div>
+                <Nav />
+                <Container className="profile-page">
+                    <Row>
+                        <Col md="12">
+                            <ProfileInfo />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md="12">
+                            <StatisticalOverview />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }
