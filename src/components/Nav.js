@@ -61,7 +61,7 @@ class Nav extends Component {
           <AppBar
             style={{
               backgroundColor: 'white',
-              position: 'fixed',
+              position: 'relative',
             }}
             titleStyle={{
               flex: 'none',
