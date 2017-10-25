@@ -18,7 +18,7 @@ class ProfileInfo extends Component {
 
         this.profileImage = profilePicture;
     }
-    
+
     render() {
         return (
             <Container className="profile-info">
@@ -38,10 +38,10 @@ class ProfileInfo extends Component {
                     <Col md="8">
                         <div className="user-description">
                             <div className="user-name">
-                                <h1>User Name</h1>
+                                <h1>Max Belman</h1>
                             </div>
                             <div className="user-characteristics">
-                                <h2>Characteristic 1 / Characteristic 2 / Characteristic 3</h2>
+                                <h2>INFJ / Characteristic 2 / Characteristic 3</h2>
                             </div>
                         </div>
                     </Col>

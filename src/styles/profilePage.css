@@ -12,4 +12,15 @@
 
 .profile-page .user-description {
     padding-left: 2em;
+    padding-top: 6em;
+}
+
+.profile-page .statistical-overview {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+.profile-page .statistical-overview .bar-graph {
+    margin-top: 2em;
 }
