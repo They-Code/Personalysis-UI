@@ -60,8 +60,10 @@ class Nav extends Component {
         <Row>
           <Col md="12">
           <AppBar
-            title="Personalystic"
-            style={{position: 'fixed', backgroundColor:'#F5F2F0'}}
+            style={{
+              backgroundColor: '#F5F2F0',
+              position: 'relative',
+            }}
             titleStyle={{
               flex: 'none',
               marginRight: '0.5em',
