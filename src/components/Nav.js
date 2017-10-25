@@ -74,7 +74,6 @@ class Nav extends Component {
               marginLeft: 'auto',
               marginRight: 'auto',
               width: '100%',
-              lineHeight: '52px',
             }}
             iconElementRight={
               <Container fluid={true}>
@@ -94,7 +93,7 @@ class Nav extends Component {
                   <Col md="4" className="login-button">
                     <FlatButton onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
                   </Col>
-                  <Col md="1" className="signup-button">
+                  <Col md="1" backgroundColor = '#F5F2F0'>
                     <RaisedButton className ="nav-signup" backgroundColor='#F5F2F0' onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
                   </Col>
                 </Row>

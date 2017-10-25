@@ -8,9 +8,6 @@ body {
   font-family: sans-serif;
 }
 
-a {
-    margin: 5px;
-  }
 
 .landing-main-container{
     height:100%;
@@ -97,9 +94,7 @@ a {
   padding-right: 0;
 }
 
-.navbar .signup-button {
-  padding-left: 0;
-}
+
 
 .navbar {
   padding-left: 0;
@@ -109,12 +104,14 @@ a {
 
 
 .navbar .nav-signup{
+    padding:0;
     border: dashed;
     border-width: 2px;
+    background: #F5F2F0;
     border-top-color: #F97150;
     border-left-color: #F0BB56;
     border-bottom-color: #80C6B0;
     border-right-color: #67B1C3;
-    background-color: #F5F2F0;
+
 
 }

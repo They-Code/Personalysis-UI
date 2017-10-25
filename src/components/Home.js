@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/common.css';
-import Container from 'muicss/lib/react/container';
 import Nav from './Nav.js';
 import {
     Container,
@@ -14,15 +13,13 @@ import {
     FlatButton,
     Menu,
     MenuItem,
-    IconButton,
-    FontIcon
+
   } from 'material-ui';
 
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
 
 import DNA_sketch from '../images/DNA_drawing.png';
 
-import ActionHome from 'material-ui/svg-icons/action/home';
 
 
 
@@ -57,7 +54,9 @@ class Home extends Component {
 
     render() {
         return (
-            <Container className="landing-main-container">
+
+            <Container className="landing-main-container" >
+                <Nav/>
                 <FloatingActionButton className="floating-button" backgroundColor="#F5F2F0" onClick={this.handleTouchTap}/>
                 <Popover
                     open={this.state.open}
