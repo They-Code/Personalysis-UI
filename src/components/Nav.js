@@ -9,7 +9,8 @@ import {
 
 import {
   AppBar,
-  FlatButton
+  FlatButton,
+  RaisedButton
 } from 'material-ui';
 
 class Nav extends Component {
@@ -52,7 +53,7 @@ class Nav extends Component {
   onSignUpButtonClick() {
     console.log('signup clicked');
   }
-  
+
   render() {
     return (
       <Container className="navbar" fluid={true}>
@@ -60,21 +61,21 @@ class Nav extends Component {
           <Col md="12">
           <AppBar
             style={{
-              backgroundColor: 'white',
+              backgroundColor: '#F5F2F0',
               position: 'relative',
             }}
             titleStyle={{
               flex: 'none',
               marginRight: '0.5em',
-              color: '#67B1C3'
+                color: '#67B1C3'
             }}
             onTitleTouchTap={this.onTitleClick}
             title="Personalystic"
+
             iconStyleRight={{
               marginLeft: 'auto',
               marginRight: 'auto',
               width: '100%',
-              lineHeight: '52px',
             }}
             iconElementRight={
               <Container fluid={true}>
@@ -94,8 +95,8 @@ class Nav extends Component {
                   <Col md="4" className="login-button">
                     <FlatButton onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
                   </Col>
-                  <Col md="1" className="signup-button">
-                    <FlatButton onClick={this.onSignUpButtonClick}>SIGN UP</FlatButton>
+                  <Col md="1" backgroundColor = '#F5F2F0'>
+                    <RaisedButton className ="nav-signup" backgroundColor='#F5F2F0' onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
                   </Col>
                 </Row>
               </Container>
