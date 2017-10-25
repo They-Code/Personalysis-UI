@@ -9,7 +9,8 @@ import {
 
 import {
   AppBar,
-  FlatButton
+  FlatButton,
+  RaisedButton
 } from 'material-ui';
 
 class Nav extends Component {
@@ -60,7 +61,7 @@ class Nav extends Component {
           <Col md="12">
           <AppBar
             title="Personalystic"
-            style={{position: 'fixed', backgroundColor:'white'}}
+            style={{position: 'fixed', backgroundColor:'#F5F2F0'}}
             titleStyle={{
               flex: 'none',
               marginRight: '0.5em',
@@ -94,7 +95,7 @@ class Nav extends Component {
                     <FlatButton onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
                   </Col>
                   <Col md="1" className="signup-button">
-                    <FlatButton onClick={this.onSignUpButtonClick}>SIGN UP</FlatButton>
+                    <RaisedButton className ="nav-signup" backgroundColor='#F5F2F0' onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
                   </Col>
                 </Row>
               </Container>

@@ -19,7 +19,7 @@ a {
     position:absolute;
 }
 
-.landing-main-container .top-row{
+.landing-main-container .landing-row{
     height:100%;
     width:100%;
     margin:0;
@@ -45,7 +45,52 @@ a {
     position:fixed;
     bottom: 5%;
     right:3%;
+    background-color: #F5F2F0;
+}
 
+.landing-main-container .features-title-row{
+    height:50%;
+    width:100%;
+    margin:0;
+    background-color: #F5F2F0;
+}
+
+.landing-main-container .features-main-row{
+    height:50%;
+    width:100%;
+    margin:0;
+    background-color: #F5F2F0;
+}
+
+.features-title-row .DNA-drawing{
+    max-height:100%;
+    max-width: 100%;
+}
+
+.features-title-row .features-title{
+    text-align: left;
+    font-family:"Helvetica Neue", Helvetica, Arial, Verdana, "Trebuchet MS";
+    font-size: 5em;
+    font-weight: bold;
+    color: #67B1C3;
+
+}
+
+.features-title-row .features-DNA-col{
+    padding:0;
+}
+
+.features-title-row .features-title-col{
+    padding:0;
+
+}
+
+.features-main-row .features-left{
+    padding: 0;
+}
+
+.features-main-row .features-right{
+    padding: 0;
 }
 .navbar .login-button {
   text-align: right;
@@ -59,4 +104,17 @@ a {
 .navbar {
   padding-left: 0;
   padding-right: 0;
+  background-color: #F5F2F0;
+}
+
+
+.navbar .nav-signup{
+    border: dashed;
+    border-width: 2px;
+    border-top-color: #F97150;
+    border-left-color: #F0BB56;
+    border-bottom-color: #80C6B0;
+    border-right-color: #67B1C3;
+    background-color: #F5F2F0;
+
 }
