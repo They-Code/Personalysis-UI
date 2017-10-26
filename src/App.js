@@ -23,43 +23,20 @@ const withProps = (Component, props) => {
 };
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoggedIn: false,
-    };
-
-    this.updateLogin = this.updateLogin.bind(this);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.isLoggedIn === true) {
-      return true;
+    render() {
+        return (
+            <MuiThemeProvider>
+                <Router>
+                <div>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/about' render={() => <h1>About</h1>} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/profile' component={ProfilePage} />
+                </div>
+                </Router>
+            </MuiThemeProvider>
+        );
     }
-    return false;
-  }
-
-  updateLogin(isLoggedIn) {
-    this.setState({
-      isLoggedIn,
-    });
-  }
-
-  render() {
-    return (
-      <MuiThemeProvider>
-        <Router>
-          <div>
-            <Route exact path='/' component={Home} />
-            <Route path='/about' render={() => <h1>About</h1>} />
-            <Route path='/login' component={withProps(Login, {updateLogin: this.updateLogin})} />
-            <Route path='/profile' component={ProfilePage} />
-          </div>
-        </Router>
-      </MuiThemeProvider>
-    );
-  }
 }
 
 export default App;

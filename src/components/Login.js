@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/common.css';
+import { withRouter } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -10,7 +11,9 @@ class Login extends Component {
     }
 
     login() {
-        this.props.updateLogin(true);
+        this.props.history.push('/profile', {
+            isLoggedIn: true,
+        });
     }
 
     render() {
@@ -23,4 +26,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
