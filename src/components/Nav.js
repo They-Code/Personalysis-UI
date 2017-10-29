@@ -56,9 +56,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <Container className="navbar" fluid={true}>
-        <Row>
-          <Col md="12">
+      <div className="navbar">
           <AppBar
             style={{
               backgroundColor: '#F5F2F0',
@@ -103,9 +101,7 @@ class Nav extends Component {
             }
             showMenuIconButton={false}
           />
-          </Col>
-        </Row>
-      </Container>
+      </div>
     );
   }
 }
