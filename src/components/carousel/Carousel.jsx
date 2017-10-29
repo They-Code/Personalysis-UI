@@ -25,7 +25,15 @@ export default class Carousel extends Component
         this.state = {};
     }
 
-
+    createList()
+    {
+        let arr = [];
+        arr.push(this.questions.forEach((question, index) => {
+                <CardWrap question={question}/>
+            })
+        );
+        return arr;
+    }
 
 
     render()
@@ -39,6 +47,11 @@ export default class Carousel extends Component
             slidesToShow: 1,
             slidesToScroll: 1
         };
+
+
+
+        let arr = this.createList();
+
         return(
             <Container>
                 <Row>
@@ -48,14 +61,7 @@ export default class Carousel extends Component
                                 <Row>
                                     <Col sm='12' md='12' lg='12' className="card-styles-container">
                                         {
-                                            () => {
-                                                let arr = [];
-                                                arr.push(this.questions.forEach((question, index) => {
-                                                    <CardWrap question={question}/>
-                                                })
-                                                );
-                                                return arr;
-                                            }
+                                            arr
                                         }
                                     </Col>
                                 </Row>
