@@ -57,50 +57,47 @@ class Nav extends Component {
   render() {
     return (
       <div className="navbar">
-          <AppBar
-            style={{
-              backgroundColor: '#F5F2F0',
-              position: 'relative',
-            }}
-            titleStyle={{
-              flex: 'none',
-              marginRight: '0.5em',
-                color: '#67B1C3'
-            }}
-            onTitleTouchTap={this.onTitleClick}
-            title="Personalystic"
-
-            iconStyleRight={{
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              width: '100%',
-            }}
-            iconElementRight={
-              <Container fluid={true}>
-                <Row>
-                  <Col md="1">
-                    <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
-                  </Col>
-                  <Col md="1">
-                    <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
-                  </Col>
-                  <Col md="1">
-                    <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
-                  </Col>
-                  <Col md="4">
-                    <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
-                  </Col>
-                  <Col md="4" className="login-button">
-                    <FlatButton onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
-                  </Col>
-                  <Col md="1" backgroundColor = '#F5F2F0'>
-                    <RaisedButton className ="nav-signup" backgroundColor='#F5F2F0' onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
-                  </Col>
-                </Row>
-              </Container>
-            }
-            showMenuIconButton={false}
-          />
+        <AppBar
+          style={{
+            backgroundColor: '#F5F2F0',
+          }}
+          title="Personalysis"
+          titleStyle={{
+            color: '#67B1C3',
+            minWidth: '5.7em',
+            maxWidth: '5.7em',
+            paddingRight: '.5em',
+          }}
+          showMenuIconButton={false}
+          iconStyleRight={{
+            marginRight: '0',
+            width: '100%',
+          }}
+          iconElementRight={
+            <Container className="button-menu-container" fluid={true}>
+              <Row className="button-menu">
+                <Col md="1" className="button">
+                  <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
+                </Col>
+                <Col md="1" className="button">
+                  <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
+                </Col>
+                <Col md="1" className="button">
+                  <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
+                </Col>
+                <Col md="4" className="button">
+                  <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
+                </Col>
+                <Col md="4" className="button login-button">
+                  <FlatButton onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
+                </Col>
+                <Col md="1" className="button">
+                  <RaisedButton className="signup-button" onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
+                </Col>
+              </Row>
+            </Container>
+          }
+        />
       </div>
     );
   }
