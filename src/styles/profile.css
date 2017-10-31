@@ -28,12 +28,6 @@
 
 /* Statistical Overview Styles */
 
-.profile-page .statistical-overview {
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-}
-
 .profile-page .statistical-overview .bar-graph {
     margin-top: 2em;
 }
