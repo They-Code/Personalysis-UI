@@ -1,3 +1,5 @@
+/* Profile Info Styles */
+
 .profile-page {
     padding-left: 0;
     padding-right: 0;
@@ -10,10 +12,21 @@
     position: relative;
 }
 
-.profile-page .user-description {
-    padding-left: 2em;
-    padding-top: 6em;
+.profile-info .profile-info-row {
+    display: flex;
 }
+
+.profile-info .avatar-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-info .user-description-container {
+    margin: auto;
+}
+
+
+/* Statistical Overview Styles */
 
 .profile-page .statistical-overview {
     padding-left: 0;
