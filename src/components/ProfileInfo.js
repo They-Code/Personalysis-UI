@@ -27,7 +27,6 @@ class ProfileInfo extends Component {
                         <Avatar
                             src={this.profileImage}
                             style={{
-                                borderStyle: 'solid',
                                 backgroundColor: 'transparent',
                                 height: '12em',
                                 width: '12em',
