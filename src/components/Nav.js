@@ -17,12 +17,14 @@ import {
 } from 'material-ui';
 
 import DropdownIcon from 'material-ui/svg-icons/navigation/arrow-drop-down';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
             dropdownMenuOpen: false,
+            authMenuOpen: false,
         };
 
         // button click handlers
@@ -35,17 +37,20 @@ class Nav extends Component {
         this.onSignUpButtonClick = this.onSignUpButtonClick.bind(this);
 
         // popover handlers
-        this.onDropdownMenuClick = this.onDropdownMenuClick.bind(this);
-        this.handleRequestClose = this.handleRequestClose.bind(this);
+        this.onNavMenuOpen = this.onNavMenuOpen.bind(this);
+        this.authMenuOpen = this.authMenuOpen.bind(this);
+        this.handleNavMenuClose = this.handleNavMenuClose.bind(this);
+        this.handleAuthMenuClose = this.handleAuthMenuClose.bind(this);
     }
 
     componentDidMount() {
-        window.addEventListener('resize', this.handleRequestClose);
+        window.addEventListener('resize', this.handleNavMenuClose);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.handleRequestClose);
+        window.removeEventListener('resize', this.handleNavMenuClose);
     }
+
 
     onTitleClick() {
         console.log('title clicked');
@@ -75,88 +80,121 @@ class Nav extends Component {
         console.log('signup clicked');
     }
 
-    onDropdownMenuClick(event) {
+    onNavMenuOpen(event) {
         // This prevents ghost click.
         event.preventDefault();
 
         this.setState({
-        dropdownMenuOpen: true,
-        anchorEl: event.currentTarget,
+            dropdownMenuOpen: true,
+            anchorEl: event.currentTarget,
         });
     }
 
-    handleRequestClose() {
+    authMenuOpen(event) {
+        // This prevents ghost click.
+        event.preventDefault();
+
         this.setState({
-        dropdownMenuOpen: false,
+            authMenuOpen: true,
+            authAnchorEl: event.currentTarget,
+        });
+    }
+
+    handleNavMenuClose() {
+        this.setState({
+            dropdownMenuOpen: false,
         });
     };
+
+    handleAuthMenuClose() {
+        this.setState({
+            authMenuOpen: false,
+        });
+    }
 
     render() {
         return (
             <div className="navbar">
                 <AppBar
-                style={{
-                    backgroundColor: '#F5F2F0',
-                }}
-                title="Personalysis"
-                titleStyle={{
-                    color: '#67B1C3',
-                    minWidth: '5.7em',
-                    maxWidth: '5.7em',
-                    paddingRight: '.5em',
-                }}
-                showMenuIconButton={false}
-                iconStyleRight={{
-                    marginRight: '0',
-                    width: '100%',
-                }}
-                iconElementRight={
-                    <Container className="button-menu-container" fluid={true}>
-                    <Row className="button-menu">
-                        <Col sm="6" md="8">
-                        <div className="popover mui--hidden-md mui--hidden-lg mui--hidden-xl">
-                            <DropdownIcon onClick={this.onDropdownMenuClick}/>
-                            <Popover
-                                open={this.state.dropdownMenuOpen}
-                                anchorEl={this.state.anchorEl}
-                                anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                                targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                                onRequestClose={this.handleRequestClose}
-                                >
-                                <Menu>
-                                    <MenuItem primaryText="FEATURES" onClick={this.onFeaturesButtonClick} />
-                                    <MenuItem primaryText="CONTACT" onClick={this.onContactButtonClick} />
-                                    <MenuItem primaryText="ABOUT US" onClick={this.onAboutUsButtonClick} />
-                                    <MenuItem primaryText="BLOG"  onClick={this.onBlogButtonClick} />
-                                </Menu>
-                            </Popover>
-                        </div>
-                        <div className="button-group mui--hidden-xs mui--hidden-sm">
-                            <div className="button">
-                            <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
-                            </div>
-                            <div className="button">
-                            <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
-                            </div>
-                            <div className="button">
-                            <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
-                            </div>
-                            <div className="button">
-                            <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
-                            </div>
-                        </div>
-                        </Col>
-                        <Col sm="6" md="4" className="button-group auth">
-                        <div className="button">
-                            <FlatButton className="login-button" onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
-                        </div>
-                        <div className="button">
-                            <RaisedButton className="signup-button" onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
-                        </div>
-                        </Col>
-                    </Row>
-                    </Container>
-                }
+                    style={{
+                        backgroundColor: '#F5F2F0',
+                    }}
+                    title="Personalysis"
+                    titleStyle={{
+                        color: '#67B1C3',
+                        minWidth: '5.7em',
+                        maxWidth: '5.7em',
+                        paddingRight: '.5em',
+                    }}
+                    showMenuIconButton={false}
+                    iconStyleRight={{
+                        marginRight: '0',
+                        width: '100%',
+                    }}
+                    iconElementRight={
+                        <Container className="button-menu-container" fluid={true}>
+                            <Row className="button-menu">
+                                <Col xs="6" sm="6" md="8">
+                                <div className="popover mui--hidden-md mui--hidden-lg mui--hidden-xl">
+                                    <DropdownIcon onClick={this.onNavMenuOpen}/>
+                                    <Popover
+                                        open={this.state.dropdownMenuOpen}
+                                        anchorEl={this.state.anchorEl}
+                                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                                        targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                                        onRequestClose={this.handleNavMenuClose}
+                                        >
+                                        <Menu>
+                                            <MenuItem primaryText="FEATURES" onClick={this.onFeaturesButtonClick} />
+                                            <MenuItem primaryText="CONTACT" onClick={this.onContactButtonClick} />
+                                            <MenuItem primaryText="ABOUT US" onClick={this.onAboutUsButtonClick} />
+                                            <MenuItem primaryText="BLOG"  onClick={this.onBlogButtonClick} />
+                                        </Menu>
+                                    </Popover>
+                                </div>
+                                <div className="button-group mui--hidden-xs mui--hidden-sm">
+                                    <div className="button">
+                                    <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
+                                    </div>
+                                    <div className="button">
+                                    <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
+                                    </div>
+                                    <div className="button">
+                                    <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
+                                    </div>
+                                    <div className="button">
+                                    <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
+                                    </div>
+                                </div>
+                                </Col>
+                                <Col xs="6" sm="6" md="4" className="button-group auth">
+                                    <div className="button-group mui--hidden-xs">
+                                        <div className="button">
+                                            <FlatButton className="login-button" onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
+                                        </div>
+                                        <div className="button">
+                                            <RaisedButton className="signup-button" onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
+                                        </div>
+                                    </div>
+                                    <div className="popover mui--visible-xs-block">
+                                        <MoreVertIcon onClick={this.authMenuOpen}/>
+                                        <Popover
+                                            open={this.state.authMenuOpen}
+                                            anchorEl={this.state.authAnchorEl}
+                                            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                                            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                                            onRequestClose={this.handleAuthMenuClose}
+                                        >
+                                        <Menu>
+                                            <MenuItem primaryText="LOGIN" onClick={this.onLoginButtonClick} />
+                                            <MenuItem primaryText="SIGNUP" onClick={this.onSignUpButtonClick} />
+                                        </Menu>
+                                    </Popover>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    }
                 />
             </div>
         );
