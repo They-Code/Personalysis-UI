@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/profilePage.css';
+import '../styles/profile.css';
 
 import { ORFrame } from 'semiotic';
 

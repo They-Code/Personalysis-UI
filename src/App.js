@@ -5,7 +5,7 @@ import './styles/common.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // react-router
-import { 
+import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
@@ -13,7 +13,7 @@ import {
 // custom components
 import Home from './components/Home.js';
 import Login from './components/Login.js';
-import ProfilePage from './components/ProfilePage.js';
+import Profile from './components/Profile.js';
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/about' render={() => <h1>About</h1>} />
             <Route path='/login' component={Login} />
-            <Route path='/profile' component={ProfilePage} />
+            <Route path='/profile' component={Profile} />
           </div>
         </Router>
       </MuiThemeProvider>
