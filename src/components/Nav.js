@@ -39,18 +39,23 @@ class Nav extends Component {
         // popover handlers
         this.onNavMenuOpen = this.onNavMenuOpen.bind(this);
         this.authMenuOpen = this.authMenuOpen.bind(this);
+        this.handlePopoverClose = this.handlePopoverClose.bind(this);
         this.handleNavMenuClose = this.handleNavMenuClose.bind(this);
         this.handleAuthMenuClose = this.handleAuthMenuClose.bind(this);
     }
 
     componentDidMount() {
-        window.addEventListener('resize', this.handleNavMenuClose);
+        window.addEventListener('resize', this.handlePopoverClose);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.handleNavMenuClose);
+        window.removeEventListener('resize', this.handlePopoverClose);
     }
 
+    handlePopoverClose() {
+        this.handleNavMenuClose();
+        this.handleAuthMenuClose();
+    }
 
     onTitleClick() {
         console.log('title clicked');
@@ -135,37 +140,37 @@ class Nav extends Component {
                         <Container className="button-menu-container" fluid={true}>
                             <Row className="button-menu">
                                 <Col xs="6" sm="6" md="8">
-                                <div className="popover mui--hidden-md mui--hidden-lg mui--hidden-xl">
-                                    <DropdownIcon onClick={this.onNavMenuOpen}/>
-                                    <Popover
-                                        open={this.state.dropdownMenuOpen}
-                                        anchorEl={this.state.anchorEl}
-                                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                                        targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                                        onRequestClose={this.handleNavMenuClose}
-                                        >
-                                        <Menu>
-                                            <MenuItem primaryText="FEATURES" onClick={this.onFeaturesButtonClick} />
-                                            <MenuItem primaryText="CONTACT" onClick={this.onContactButtonClick} />
-                                            <MenuItem primaryText="ABOUT US" onClick={this.onAboutUsButtonClick} />
-                                            <MenuItem primaryText="BLOG"  onClick={this.onBlogButtonClick} />
-                                        </Menu>
-                                    </Popover>
-                                </div>
-                                <div className="button-group mui--hidden-xs mui--hidden-sm">
-                                    <div className="button">
-                                    <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
+                                    <div className="popover mui--hidden-md mui--hidden-lg mui--hidden-xl">
+                                        <DropdownIcon onClick={this.onNavMenuOpen}/>
+                                        <Popover
+                                            open={this.state.dropdownMenuOpen}
+                                            anchorEl={this.state.anchorEl}
+                                            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                                            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                                            onRequestClose={this.handleNavMenuClose}
+                                            >
+                                            <Menu>
+                                                <MenuItem primaryText="FEATURES" onClick={this.onFeaturesButtonClick} />
+                                                <MenuItem primaryText="CONTACT" onClick={this.onContactButtonClick} />
+                                                <MenuItem primaryText="ABOUT US" onClick={this.onAboutUsButtonClick} />
+                                                <MenuItem primaryText="BLOG"  onClick={this.onBlogButtonClick} />
+                                            </Menu>
+                                        </Popover>
                                     </div>
-                                    <div className="button">
-                                    <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
+                                    <div className="button-group mui--hidden-xs mui--hidden-sm">
+                                        <div className="button">
+                                        <FlatButton onClick={this.onFeaturesButtonClick}>FEATURES</FlatButton>
+                                        </div>
+                                        <div className="button">
+                                        <FlatButton onClick={this.onContactButtonClick}>CONTACT</FlatButton>
+                                        </div>
+                                        <div className="button">
+                                        <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
+                                        </div>
+                                        <div className="button">
+                                        <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
+                                        </div>
                                     </div>
-                                    <div className="button">
-                                    <FlatButton onClick={this.onAboutUsButtonClick}>ABOUT US</FlatButton>
-                                    </div>
-                                    <div className="button">
-                                    <FlatButton onClick={this.onBlogButtonClick}>BLOG</FlatButton>
-                                    </div>
-                                </div>
                                 </Col>
                                 <Col xs="6" sm="6" md="4" className="button-group auth">
                                     <div className="button-group mui--hidden-xs">
