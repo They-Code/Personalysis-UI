@@ -41,40 +41,36 @@ class StatisticalOverview extends Component {
 
     render() {
         return (
-            <Container className="statistical-overview">
-                <Row>
-                    <Col md="12">
-                        <Tabs
-                            value={this.state.value}
-                            onChange={this.handleTabChange}
-                        >
-                            <Tab label="Tab A" value="a">
-                                <BarGraph />
-                            </Tab>
-                            <Tab label="Tab B" value="b">
-                                <div>
-                                    <h2 style={styles.headline}>Controllable Tab B</h2>
-                                    <p>
-                                    This is another example of a controllable tab. Remember, if you
-                                    use controllable Tabs, you need to give all of your tabs values or else
-                                    you wont be able to select them.
-                                    </p>
-                                </div>
-                            </Tab>
-                            <Tab label="Tab C" value="c">
-                                <div>
-                                    <h2 style={styles.headline}>Controllable Tab C</h2>
-                                    <p>
-                                    This is another example of a controllable tab. Remember, if you
-                                    use controllable Tabs, you need to give all of your tabs values or else
-                                    you wont be able to select them.
-                                    </p>
-                                </div>
-                            </Tab>
-                        </Tabs>
-                    </Col>
-                </Row>
-            </Container>
+            <div className="statistical-overview">
+                <Tabs
+                    value={this.state.value}
+                    onChange={this.handleTabChange}
+                >
+                    <Tab label="Tab A" value="a">
+                        <BarGraph />
+                    </Tab>
+                    <Tab label="Tab B" value="b">
+                        <div>
+                            <h2 style={styles.headline}>Controllable Tab B</h2>
+                            <p>
+                            This is another example of a controllable tab. Remember, if you
+                            use controllable Tabs, you need to give all of your tabs values or else
+                            you wont be able to select them.
+                            </p>
+                        </div>
+                    </Tab>
+                    <Tab label="Tab C" value="c">
+                        <div>
+                            <h2 style={styles.headline}>Controllable Tab C</h2>
+                            <p>
+                            This is another example of a controllable tab. Remember, if you
+                            use controllable Tabs, you need to give all of your tabs values or else
+                            you wont be able to select them.
+                            </p>
+                        </div>
+                    </Tab>
+                </Tabs>
+            </div>
         );
     }
 }
