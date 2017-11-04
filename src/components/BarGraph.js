@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/profilePage.css';
+import '../styles/profile.css';
 
-import { ORFrame } from 'semiotic';
+import { ResponsiveORFrame } from 'semiotic';
 
 const barChartData = [
     { phenotype: "Agreeableness", score: 1 },
@@ -40,7 +40,7 @@ class BarGraph extends Component {
 
     updateWindowDimensions() {
         this.setState({
-            width: window.innerWidth * .9,
+            width: window.innerWidth,
             height: window.innerHeight
         });
     }
@@ -48,7 +48,7 @@ class BarGraph extends Component {
     render() {
         return (
             <div className="bar-graph">
-                <ORFrame
+                <ResponsiveORFrame
                     size={[this.state.width, 500]}
                     data={barChartData}
                     oAccessor={"phenotype"}

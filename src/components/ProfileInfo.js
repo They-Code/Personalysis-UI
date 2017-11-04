@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/profilePage.css';
+import '../styles/profile.css';
 import {
     Container,
     Row,
@@ -22,8 +22,8 @@ class ProfileInfo extends Component {
     render() {
         return (
             <Container className="profile-info">
-                <Row>
-                    <Col md="4">
+                <Row className="profile-info-row">
+                    <Col md="5" className="avatar-container">
                         <Avatar
                             src={this.profileImage}
                             style={{
@@ -31,11 +31,10 @@ class ProfileInfo extends Component {
                                 height: '12em',
                                 width: '12em',
                                 padding: '2em 0em',
-                                float: 'right',
                             }}
                         />
                     </Col>
-                    <Col md="8">
+                    <Col md="7" className="user-description-container">
                         <div className="user-description">
                             <div className="user-name">
                                 <h1>Max Belman</h1>
