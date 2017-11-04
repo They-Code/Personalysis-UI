@@ -50,6 +50,7 @@ class BarGraph extends Component {
             <div className="bar-graph">
                 <ResponsiveORFrame
                     size={[this.state.width, 500]}
+                    responsiveWidth={true}
                     data={barChartData}
                     oAccessor={"phenotype"}
                     rAccessor={"score"}
