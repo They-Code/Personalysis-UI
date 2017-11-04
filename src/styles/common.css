@@ -89,29 +89,3 @@ body {
 .features-main-row .features-right{
     padding: 0;
 }
-.navbar .login-button {
-  text-align: right;
-  padding-right: 0;
-}
-
-
-
-.navbar {
-  padding-left: 0;
-  padding-right: 0;
-  background-color: #F5F2F0;
-}
-
-
-.navbar .nav-signup{
-    padding:0;
-    border: dashed;
-    border-width: 2px;
-    background: #F5F2F0;
-    border-top-color: #F97150;
-    border-left-color: #F0BB56;
-    border-bottom-color: #80C6B0;
-    border-right-color: #67B1C3;
-
-
-}
