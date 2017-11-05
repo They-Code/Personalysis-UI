@@ -14,9 +14,7 @@ import {
 import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Profile from './components/Profile.js';
-import ProfilePage from './components/ProfilePage.js';
-import Carousel from './components/carousel/Carousel.jsx'
-=======
+import Carousel from './components/carousel/Carousel.jsx';
 
 
 class App extends Component {
@@ -29,7 +27,6 @@ class App extends Component {
             <Route path='/about' render={() => <h1>About</h1>} />
             <Route path='/login' component={Login} />
             <Route path='/profile' component={Profile} />
-            <Route path='/profile' component={ProfilePage} />
             <Route path='/questions' component={Carousel} />
           </div>
         </Router>
