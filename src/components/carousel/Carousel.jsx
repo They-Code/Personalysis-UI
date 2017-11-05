@@ -22,18 +22,53 @@ export default class Carousel extends Component
                             'Longer question just to see what that looks like in that lines of the echo echo echo echo',
                             'Final countdown questions!!!!!'
                          ];
-        this.state = {};
+        this.state = {
+            currentCard: 0,
+        };
+
+        this.onClickHandler = this.onClickHandler.bind(this);
     }
+
+    onClickHandler(which)
+    {
+        console.log(which);
+        let check = this.state.currentCard;
+        console.log(check);
+        let questionLength = this.questions.length;
+        if(which === 'next')
+        {
+            if(check === questionLength-1 )
+                return;
+            else
+            {
+                let nextNum = check + 1;
+                this.setState({currentCard: nextNum});
+            }
+        }
+        if(which === 'prev')
+        {
+            if(check === 0 )
+                return;
+            else
+            {
+                let nextNum = check - 1;
+                this.setState({currentCard: nextNum});
+            }
+        }
+    }
+
 
     createList()
     {
         let arr = [];
-        arr.push(this.questions.forEach((question, index) => {
-                <CardWrap question={question}/>
-            })
-        );
+        this.questions.forEach((question, index) => {
+            arr.push(<CardWrap question={question} onClickHandler={this.onClickHandler}/>
+            )
+        });
+
         return arr;
     }
+
 
 
     render()
@@ -48,8 +83,6 @@ export default class Carousel extends Component
             slidesToScroll: 1
         };
 
-
-
         let arr = this.createList();
 
         return(
@@ -61,7 +94,7 @@ export default class Carousel extends Component
                                 <Row>
                                     <Col sm='12' md='12' lg='12' className="card-styles-container">
                                         {
-                                            arr
+                                            arr[this.state.currentCard]
                                         }
                                     </Col>
                                 </Row>

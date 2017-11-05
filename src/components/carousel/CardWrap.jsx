@@ -14,6 +14,8 @@ export default class CardWrap extends Component
     {
         super(props);
         this.state = {};
+
+
     }
 
     render()
@@ -28,8 +30,8 @@ export default class CardWrap extends Component
                                 <TextField multiLine={true} rows={1} rowsMax={2}/>
                             </CardText>
                             <CardActions>
-                                <FlatButton label="Previous" />
-                                <FlatButton label="Next" />
+                                <FlatButton label="Prev" onClick={() => {this.props.onClickHandler('prev')}}/>
+                                <FlatButton label="Next" onClick={() => {this.props.onClickHandler('next')}}/>
                             </CardActions>
                         </Card>
                     </Col>
