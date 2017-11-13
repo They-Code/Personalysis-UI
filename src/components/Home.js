@@ -28,7 +28,7 @@ class Home extends Component {
         super(props);
 
         this.state = {
-            open: false,
+            open: false
         };
 
         this.DNA_drawing = DNA_sketch;
@@ -56,7 +56,8 @@ class Home extends Component {
         return (
 
             <Container className="landing-main-container" >
-                <Nav/>
+                {//<Nav login={this.props.login} logout={this.props.logout} isAuthenticated={this.props.isAuthenticated}/>
+                }
                 <FloatingActionButton className="floating-button" backgroundColor="#F5F2F0" onClick={this.handleTouchTap}/>
                 <Popover
                     open={this.state.open}

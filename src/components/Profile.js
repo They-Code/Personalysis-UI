@@ -20,7 +20,7 @@ class Profile extends Component {
     render() {
         return (
             <div className="profile-page">
-                <Nav />
+                {/*<Nav />*/}
                 <ProfileInfo />
                 <StatisticalOverview />
             </div>

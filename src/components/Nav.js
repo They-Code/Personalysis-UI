@@ -25,6 +25,7 @@ class Nav extends Component {
         this.state = {
             dropdownMenuOpen: false,
             authMenuOpen: false,
+            loggedOut: !this.props.isAuthenticated()  //TODO: hook this to isAuthenticated
         };
 
         // button click handlers
@@ -35,6 +36,7 @@ class Nav extends Component {
         this.onBlogButtonClick = this.onBlogButtonClick.bind(this);
         this.onLoginButtonClick = this.onLoginButtonClick.bind(this);
         this.onSignUpButtonClick = this.onSignUpButtonClick.bind(this);
+        this.onLogoutButtonClick = this.onLogoutButtonClick.bind(this);
 
         // popover handlers
         this.onNavMenuOpen = this.onNavMenuOpen.bind(this);
@@ -79,10 +81,17 @@ class Nav extends Component {
 
     onLoginButtonClick() {
         console.log('login clicked');
+        this.props.appFn.login()
     }
 
     onSignUpButtonClick() {
         console.log('signup clicked');
+        this.props.appFn.signup()
+    }
+
+    onLogoutButtonClick() {
+        console.log('logout clicked');
+        this.props.appFn.logout()
     }
 
     onNavMenuOpen(event) {
@@ -118,13 +127,31 @@ class Nav extends Component {
     }
 
     render() {
+        var showLoginComponents = this.state.loggedOut ? 
+        <div className="button-group mui--hidden-xs">
+            <div className="button">
+                <FlatButton className="login-button" onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
+            </div>
+            <div className="button">
+                <RaisedButton className="signup-button" onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
+            </div>
+        </div>:
+        <div className="button-group mui--hidden-xs">
+            {/* TODO: insert replacement butons for when logged in */}
+            <div className="button">
+                <FlatButton className="logout-button" onClick={this.onLogoutButtonClick}>LOGOUT</FlatButton>
+            </div>
+        </div>
+
+
+
         return (
             <div className="navbar">
                 <AppBar
                     style={{
                         backgroundColor: '#F5F2F0',
                     }}
-                    title="Personalysis"
+                    title="Personalysis" 
                     titleStyle={{
                         color: '#67B1C3',
                         minWidth: '5.7em',
@@ -173,14 +200,7 @@ class Nav extends Component {
                                     </div>
                                 </Col>
                                 <Col xs="6" sm="6" md="4" className="button-group auth">
-                                    <div className="button-group mui--hidden-xs">
-                                        <div className="button">
-                                            <FlatButton className="login-button" onClick={this.onLoginButtonClick}>LOGIN</FlatButton>
-                                        </div>
-                                        <div className="button">
-                                            <RaisedButton className="signup-button" onClick={this.onSignUpButtonClick}>SIGN UP</RaisedButton>
-                                        </div>
-                                    </div>
+                                    {showLoginComponents}
                                     <div className="popover mui--visible-xs-block">
                                         <MoreVertIcon onClick={this.authMenuOpen}/>
                                         <Popover

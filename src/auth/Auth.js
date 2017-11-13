@@ -6,15 +6,15 @@ import history from '../history';
 
 export default class Auth {
   
+  
 
-
-  lock = new Auth0Lock(AUTH_CONFIG.clientId, AUTH_CONFIG.domain, {
+  lockLogin = new Auth0Lock(AUTH_CONFIG.clientId, AUTH_CONFIG.domain, {
     oidcConformant: true,
     autoclose: true,
     auth: {
       redirectUrl: AUTH_CONFIG.callbackUrl, //'http://localhost:3000/callback', //
       responseType: 'token id_token',
-      audience: `https://groupwyze.auth0.com/userinfo`,
+      audience: `https://personalystic.auth0.com/userinfo`,
       params: {
         scope: 'openid profile email'
       }
@@ -27,11 +27,33 @@ export default class Auth {
     },
     socialButtonStyle: 'small',
     languageDictionary: {
-        title: 'GroupWyze'
+        title: 'Personalystic'
     }
-
   });
 
+  lockSignUp = new Auth0Lock(AUTH_CONFIG.clientId, AUTH_CONFIG.domain, {
+    oidcConformant: true,
+    autoclose: true,
+    auth: {
+      redirectUrl: AUTH_CONFIG.callbackUrl, //'http://localhost:3000/callback', //
+      responseType: 'token id_token',
+      audience: `https://personalystic.auth0.com/userinfo`,
+      params: {
+        scope: 'openid profile email'
+      }
+    },
+    defaultDatabaseConnection: 'Username-Password-Authentication',
+    theme: {
+        logo: './favicon.ico', //TODO: Change this
+        primaryColor: '#F44336', // TODO: Change this
+        labeledSubmitButton: false
+    },
+    socialButtonStyle: 'small',
+    languageDictionary: {
+        title: 'Personalystic'
+    },
+    initialScreen:'signUp'
+  });
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -55,10 +77,15 @@ export default class Auth {
     this.getProfile = this.getProfile.bind(this);
   }
 
-
   // Auth Lock Functions
   // Handles Signup and Log in. 
   // ===================================================
+  lock = this.lockLogin;
+
+  changeLockToSignup() {
+      this.lock = this.lockSignUp;
+  }
+
   login() {
     // Call the show method to display the widget.
     this.lock.show({
@@ -110,7 +137,6 @@ export default class Auth {
     // access token's expiry time
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
-
   }
 
   // Auth0 JS
