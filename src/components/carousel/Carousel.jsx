@@ -11,7 +11,7 @@ import Slider from 'react-slick'
 import './carousel.css'
 
 
-
+console.log("entered carousel")
 export default class Carousel extends Component
 {
 
@@ -27,6 +27,11 @@ export default class Carousel extends Component
         };
 
         this.onClickHandler = this.onClickHandler.bind(this);
+    }
+
+    componentWillMount() {
+        console.log("trying to hide nav")
+        this.props.appFn.hideNav();
     }
 
     onClickHandler(which)
