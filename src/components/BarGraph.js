@@ -13,8 +13,8 @@ const barChartData = [
     { phenotype: "Anger", score: 3 },
     { phenotype: "Reward Dependence", score: 5 },
     { phenotype: "Harm Avoidance", score: 2 },
-    { phenotype: "Gambling", score: 3 },
     { phenotype: "Novelty Seeking", score: 1 },
+    { phenotype: "Gambling", score: 3 },
 ];
 
 class BarGraph extends Component {
@@ -40,7 +40,7 @@ class BarGraph extends Component {
 
     updateWindowDimensions() {
         this.setState({
-            width: window.innerWidth,
+            width: window.innerWidth * .76,
             height: window.innerHeight
         });
     }
@@ -49,16 +49,15 @@ class BarGraph extends Component {
         return (
             <div className="bar-graph">
                 <ResponsiveORFrame
-                    size={[this.state.width, 500]}
                     data={barChartData}
-                    oAccessor={"phenotype"}
-                    rAccessor={"score"}
-                    style={{
-                        fill: "#00a2ce",
-                        stroke: "white",
-                    }}
+                    margin={{ left: 20, top: 20, bottom: 100, right: 30 }}
+                    oAccessor={d => d.phenotype}
+                    oLabel={d => <text transform="rotate(45)">{d}</text>}
+                    rAccessor={d => d.score}
+                    renderMode={"sketchy"}
+                    size={[this.state.width, 500]}
+                    style={() => ({ fill: '#b3331d', opacity: 1, stroke: 'white' })}
                     type={"bar"}
-                    oLabel={true}
                 />
             </div>
         );
