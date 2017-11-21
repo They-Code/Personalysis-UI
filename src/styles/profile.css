@@ -1,9 +1,21 @@
 /* Profile Info Styles */
 
+.profile-page-container {
+    background-color: #67B1C3;
+    padding-top: 2%;
+    padding-bottom: 10%;
+}
+
 .profile-page {
-    padding-left: 0;
-    padding-right: 0;
+    margin: 0 10%;
+    background-color: white;
     position: relative;
+    border: solid;
+    border-width: 2%;
+    border-top-color: #F97150;
+    border-left-color: #F0BB56;
+    border-bottom-color: #80C6B0;
+    border-right-color: #F0BB56;
 }
 
 .profile-page .profile-info {
@@ -18,7 +30,7 @@
 
 .profile-info .avatar-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .profile-info .user-description-container {
@@ -29,5 +41,6 @@
 /* Statistical Overview Styles */
 
 .profile-page .statistical-overview .bar-graph {
+    margin: 0 2%;
     margin-top: 2em;
 }

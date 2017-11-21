@@ -19,10 +19,12 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="profile-page">
-                {/*<Nav />*/}
-                <ProfileInfo />
-                <StatisticalOverview />
+            <div className="profile-page-container">
+                <div className="profile-page">
+                    {/*<Nav />*/}
+                    <ProfileInfo />
+                    <StatisticalOverview />
+                </div>
             </div>
         );
     }
