@@ -6,12 +6,15 @@ import {
     Col,
 } from 'muicss/react';
 
+
+
 import {
     Tabs,
     Tab,
 } from 'material-ui';
 
 import BarGraph from './BarGraph.js';
+import ChartVisual from './ChartVisual.js';
 
 const styles = {
     headline: {
@@ -51,12 +54,8 @@ class StatisticalOverview extends Component {
                     </Tab>
                     <Tab label="Tab B" value="b">
                         <div>
-                            <h2 style={styles.headline}>Controllable Tab B</h2>
-                            <p>
-                            This is another example of a controllable tab. Remember, if you
-                            use controllable Tabs, you need to give all of your tabs values or else
-                            you wont be able to select them.
-                            </p>
+                            {/* <h2 style={styles.headline}>Controllable Tab B</h2>*/}
+                            <ChartVisual/>
                         </div>
                     </Tab>
                     <Tab label="Tab C" value="c">

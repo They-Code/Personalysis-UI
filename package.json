@@ -8,6 +8,7 @@
     "history": "^4.7.2",
     "node-sass-chokidar": "0.0.3",
     "react": "^16.0.0",
+    "react-d3-radar": "^0.2.6",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
     "slick-carousel": "^1.8.1"

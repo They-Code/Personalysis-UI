@@ -92,9 +92,9 @@ class App extends Component {
             <Route path='/login' component={Login} />
             {/*
             Disable this routing , since its handled with determineLanding
-            For testing, re-enable
+            For testing, re-enable?*/}
             <Route path='/profile' component={Profile} />
-            */}
+
             <Route path='/questions' 
               render={(props) => (<Carousel appFn={this.appFunctions} {...props} />)} 
             />
