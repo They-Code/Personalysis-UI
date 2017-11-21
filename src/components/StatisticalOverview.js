@@ -6,12 +6,15 @@ import {
     Col,
 } from 'muicss/react';
 
+
+
 import {
     Tabs,
     Tab,
 } from 'material-ui';
 
 import BarGraph from './BarGraph.js';
+import ChartVisual from './ChartVisual.js';
 import Quiz from './Quiz.js';
 
 const styles = {
@@ -47,12 +50,15 @@ class StatisticalOverview extends Component {
                     value={this.state.value}
                     onChange={this.handleTabChange}
                 >
-                    <Tab label="Tab A" value="a">
+                    <Tab label="Bar Graph" value="a">
                         <BarGraph />
                     </Tab>
-                    <Tab label="Tab B" value="b">
+                    <Tab label="Chart Visual" value="b">
+                        <div>
+                            <ChartVisual/>
+                        </div>
                     </Tab>
-                    <Tab label="Tab C" value="c">
+                    <Tab label="Quiz" value="c">
                         <Quiz />
                     </Tab>
                 </Tabs>
